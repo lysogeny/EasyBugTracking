@@ -26,6 +26,7 @@ def bug_tracking():
     raise BugResolutionException(title, description)
 
 def main():
+    """Run bug tracker and handle errors"""
     try:
         bug_tracking()
     except BugResolutionException as exception:
