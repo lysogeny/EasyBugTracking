@@ -19,8 +19,12 @@ def bug_tracking():
     bug_title = input("Give your bug a title: \n")
     bug_description = input("Please describe your issue: \n")
     raise BugResolutionException(bug_title, bug_description)
-    
 
+def main():
+    try:
+        bug_tracking()
+    except BugResolutionException as exception:
+        print(exception)
 
 if __name__ == "__main__":
-    bug_tracking()
+    main()
