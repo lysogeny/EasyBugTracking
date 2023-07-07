@@ -13,12 +13,17 @@ class BugResolutionException(Exception):
         """Formats the exception with a way to address it"""
         return f"Sorry we cannot help you with {name}, please consult the physical bug tracking."
 
+def receive_bug():
+    """Receive a bug from user input"""
+    title = input("Give your bug a title: \n")
+    description = input("Please describe your issue: \n")
+    return title, description
+
 def bug_tracking():
     """Bug tracking main function"""
     print("Welcome to EmilyOS digital bug tracking")
-    bug_title = input("Give your bug a title: \n")
-    bug_description = input("Please describe your issue: \n")
-    raise BugResolutionException(bug_title, bug_description)
+    title, description = receive_bug()
+    raise BugResolutionException(title, description)
 
 def main():
     try:
